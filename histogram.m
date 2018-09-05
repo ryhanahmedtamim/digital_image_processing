@@ -10,9 +10,7 @@ im2d = (rgb2gray(im));
 [m,n] = size(im2d);
 his = zeros(256,1);
 pdf = zeros(256,1);
-cdf = zeros(256,1);
-cum = zeros(256,1);
-out = zeros(256,1);
+
 a=1;
 k = m*n;
 

@@ -23,14 +23,8 @@ for i=1:m
 end
 
 
-%imh = histeq(im2d);
 his2 = zeros(256,1);
 
-
-% cum(1) = pdf(1);
-% cdf(1) = 255*cum(1);
-% out(1) = round(cdf(1));
-% %his2(1) = his(out(1));
 sum = 0;
 for i=1:size(pdf)
     sum = sum+pdf(i);
@@ -58,11 +52,16 @@ end
 hiseq = uint8(hiseq);
 figure;
 set(gcf,'Position',get(0,'Screensize'));
-subplot(1,2,1),imshow(hiseq),title('Historam Equalized Image');
 
-subplot(1,2,2),plot(his2),title('Historam  of Historam Equalized Image ');
+subplot(2,2,1),imshow(im2d),title('Original Image');
 
-im = histeq(im2d);
+subplot(2,2,2),plot(his),title('Historam  of Original Image ');
+
+subplot(2,2,3),imshow(hiseq),title('Historam Equalized Image');
+
+subplot(2,2,4),plot(his2),title('Historam  of Historam Equalized Image ');
+
+%im = histeq(im2d);
 % figure;
 % set(gcf,'Position',get(0,'Screensize'));
 % subplot(1,2,1),imshow(im),title('Historam Equalized Image');
